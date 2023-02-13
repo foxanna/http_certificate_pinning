@@ -7,7 +7,7 @@ class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
 class _PiningSslData {
@@ -18,7 +18,7 @@ class _PiningSslData {
   SHA? sha;
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final _PiningSslData _data = _PiningSslData();
   final _messengerKey = GlobalKey<ScaffoldMessengerState>();
@@ -121,12 +121,12 @@ class _MyAppState extends State<MyApp> {
                     DropdownButton(
                       items: [
                         DropdownMenuItem(
-                          child: Text(SHA.SHA1.toString()),
                           value: SHA.SHA1,
+                          child: Text(SHA.SHA1.toString()),
                         ),
                         DropdownMenuItem(
-                          child: Text(SHA.SHA256.toString()),
                           value: SHA.SHA256,
+                          child: Text(SHA.SHA256.toString()),
                         )
                       ],
                       value: _data.sha,
